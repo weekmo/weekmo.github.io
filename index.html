@@ -1,14 +1,19 @@
-<html>
-<head>
-	<title>Mohammed GitHub</title>
-</head>
-	<body>
-	<h1>Welcome to my GitHub</h1>
+---
+layout: default
+title: {{ site.name }}
+---
+
+<div id="home">
+  <h1>Welcome to my GitHub</h1>
 	<h2>Repositories Links:</h2>
 	<ul>
 		<li><a href='https://github.com/weekmo'>All Repositories</a></li>
 		<li><a href='https://weekmo.github.io/qaldbuilder/'>Qald Question Builder</a></li>
 		<li><a href='https://weekmo.github.io/Tractography/'>Direct Bundle Registration</a></li>
 	</ul>
-	</body>
-</html>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
